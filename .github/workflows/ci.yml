@@ -54,12 +54,7 @@ jobs:
         run: npm run lint
       - name: Build Next.js application
         run: npm run build
-      - name: Install wait-on
-        run: npm install --save-dev wait-on
-      - name: Start the app
-        run: npm start &
-      - name: Wait for Next.js server to be ready
-        run: npx wait-on http://localhost:3000
+      # Playwright will start the server automatically using webServer config
       - name: Run Playwright tests
         run: npm run playwright
       - name: Upload Playwright report
